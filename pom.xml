@@ -35,25 +35,35 @@
 			<artifactId>spring-boot-starter-webmvc</artifactId>
 		</dependency>
 
+		<!--  mysql connector -->
 		<dependency>
 			<groupId>com.mysql</groupId>
 			<artifactId>mysql-connector-j</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+		
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-webmvc-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 		
-		<!-- spring Boot starter data jpa to connect with database  --> 
+		<!-- spring Boot starter data jpa to connect with database  -->
+
+<!--
 		<dependency>
    			 <groupId>org.springframework.boot</groupId>
     		<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
+-->
 
-		
-		
+	<!-- embedded servlet container Works as a translator for jsp files  -->
+		<dependency>
+  			 <groupId>org.apache.tomcat.embed</groupId>
+  			 <artifactId>tomcat-embed-jasper</artifactId>
+		</dependency>
+	
 	</dependencies>
 
 	<build>
