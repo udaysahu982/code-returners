@@ -13,6 +13,17 @@
 		<form action="/createCourse" method="post">
 			
 				<table>
+				
+						<tr>
+							 <td><input name="facultyid" type="number"  placeholder="Enter faculty id of course"></td>
+						</tr>
+						
+						<tr>
+							 <td><input name="categoryid" type="number"  placeholder="Enter category id of course"></td>
+						</tr>
+						
+						
+				
 						<tr>
 							 <td><input name="title" type="text"  placeholder="Enter title of course"></td>
 						</tr>
@@ -20,17 +31,13 @@
 						<tr>
 							 <td><input name="description" type="text"  placeholder="Enter description of course"></td>
 						</tr>
-						
-						<tr>
-							 <td><input name="category" type="text"  placeholder="Enter category of course"></td>
-						</tr>
-						
+												
 						<tr>
 							 <td><input name="level" type="text"  placeholder="Enter learning level of course"></td>
 						</tr>
 						
 						<tr>
-							 <td><input name="price" type="text" placeholder="Enter the price of course"></td>
+							 <td><input name="price" type="number" placeholder="Enter the price of course"></td>
 						</tr>
 						
 						<tr>

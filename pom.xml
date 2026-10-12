@@ -51,12 +51,12 @@
 		
 		<!-- spring Boot starter data jpa to connect with database  -->
 
-<!--
+<!--  -->
 		<dependency>
    			 <groupId>org.springframework.boot</groupId>
     		<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
--->
+
 
 	<!-- embedded servlet container Works as a translator for jsp files  -->
 		<dependency>
