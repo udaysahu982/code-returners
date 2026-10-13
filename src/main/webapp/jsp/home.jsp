@@ -13,6 +13,12 @@
  <div>
  <h2> Create Course </h2><a href="/openCreateCourse">Create Course</a>
  </div>
+  <div>
+ <h2> view published Courses </h2><a href="/openCreateCourse">Create Course</a>
+ </div>
+  <div>
+ <h2> veiw all Courses </h2><a href="/viewAllCourses">view Course</a>
+ </div>
  
 </body>
 </html>
