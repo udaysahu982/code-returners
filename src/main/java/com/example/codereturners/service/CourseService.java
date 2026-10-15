@@ -24,5 +24,13 @@ public class CourseService {
 		
 		return repo.findAll();
 	}
+	
+	public Course findCourseById(int id) {
+		
+		Course course =repo.findById(id)
+				.orElseThrow(() -> new RuntimeException("Course not found"));
+		
+		return course;
+	}
 
 }

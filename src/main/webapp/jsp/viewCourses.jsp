@@ -21,6 +21,9 @@
                 <th>Level</th>
                 <th>Price</th>
                 <th>Creation Date</th>
+                <th>Edit</th>
+                <th>Delete</th>
+                
             </tr>
         </thead>
 
@@ -33,6 +36,8 @@
                     <td><c:out value="${course.level}"/></td>
                     <td>${course.price}</td>
                     <td>${course.creationDate}</td>
+                    <td><a href="/editCourse?id=${course.id}">edit</a></td>
+                    <td><a href="">delete</a></td>
                 </tr>
             </c:forEach>
         </tbody>
