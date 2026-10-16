@@ -4,11 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Published Course</title>
+<title> view Course </title>
 </head>
 <body>
-
-	<h1> Here your published courses are going to show</h1>
 
 </body>
 </html>

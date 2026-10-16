@@ -15,11 +15,11 @@
 				<table>
 				
 						<tr>
-							 <td><input name="facultyid" type="number"  placeholder="Enter faculty id of course"></td>
+							 <td><input name="facultyId" type="number"  placeholder="Enter faculty id of course"></td>
 						</tr>
 						
 						<tr>
-							 <td><input name="categoryid" type="number"  placeholder="Enter category id of course"></td>
+							 <td><input name="category_id" type="number"  placeholder="Enter category id of course"></td>
 						</tr>
 						
 						

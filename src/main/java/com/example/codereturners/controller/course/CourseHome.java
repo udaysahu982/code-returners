@@ -6,16 +6,21 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+
 
 import com.example.codereturners.bean.Course;
 import com.example.codereturners.service.CourseService;
 
 @Controller
-public class CreateCourse {
+public class CourseHome {
 	
 	@Autowired
 	CourseService courseService;
+	
+	@GetMapping("/openHome")
+	public String openCourseHome() {
+		return "home";
+	}
 	
 	@GetMapping("/openCreateCourse")
 	public String openCreateCourse() {
@@ -27,7 +32,7 @@ public class CreateCourse {
 		
 		courseService.addCourse(course);
 		
-		return "home";
+		return "redirect:/openHome";
 	}
 	
 	@GetMapping("/viewAllCourses")

@@ -32,5 +32,18 @@ public class CourseService {
 		
 		return course;
 	}
+	
+	public void deleteCourse(int id) {
+		repo.deleteById(id);
+	}
+	
+	public Course updateCourse(Course course, int id) {
+		
+		course.setCreationDate(LocalDateTime.now());
+		course.setId(id);
+		return repo.save(course);
+	}
+	
+
 
 }

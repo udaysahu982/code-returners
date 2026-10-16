@@ -12,16 +12,16 @@
 
 <div>
 		
-		<form action="/editCourse" method="post">
+		<form action="/editCourse/${course.id}" method="post">
 			
 				<table>
 				
 						<tr>
-							 <td><input name="facultyid" type="number"  value="${course.facultyId}"></td>
+							 <td><input name="facultyId" type="number"  value="${course.facultyId}"></td>
 						</tr>
 						
 						<tr>
-							 <td><input name="categoryid" type="number"  value="${course.categoryId}"></td>
+							 <td><input name="category_id" type="number"  value="${course.category_id}"></td>
 						</tr>
 						
 						
