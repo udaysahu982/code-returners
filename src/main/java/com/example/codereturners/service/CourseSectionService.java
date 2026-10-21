@@ -17,12 +17,22 @@ public class CourseSectionService {
 	@Autowired
 	CourseSectionRepo repo;
 	
+	public CourseSection findById(int id) {
+		return repo.findById(id)
+				.orElseThrow(()-> new RuntimeException("Section not found"));
+	}
+	
 	public List<CourseSection> findByCourseId(int id) {
 		
 		return repo.findByCourseId(id);
 	}
 	
 	public CourseSection addCourseSection(CourseSection section) {
+		return repo.save(section);
+	}
+	
+	public CourseSection updateSection(CourseSection section, int id) {
+		section.setId(id);
 		return repo.save(section);
 	}
 }

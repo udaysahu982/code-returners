@@ -32,7 +32,27 @@ public class CourseSectionController {
 		serv.addCourseSection(section);
 		
 		return "redirect:/openViewCourseI?id="+section.getCourseId();
+		
+	}
 	
+	@GetMapping("/openEditSection")
+	public String openEditCourse(@RequestParam("id") int id, Model model) {
+		
+		model.addAttribute("section", serv.findById(id));
+		System.out.println("open edit course controller");
+		return "editSection";
+	}
+	
+	@PostMapping("/editSection")
+	public String editSection( @ModelAttribute CourseSection section) {
+		
+		int id =section.getId();
+
+		System.out.println("the section is now updated-1....");
+		
+		serv.updateSection(section, id);
+		System.out.println("the section is now updated");
+		return "redirect:/openViewCourseI?id="+section.getCourseId();
 		
 	}
 
