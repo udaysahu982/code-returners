@@ -35,4 +35,8 @@ public class CourseSectionService {
 		section.setId(id);
 		return repo.save(section);
 	}
+	
+	public void deleteSection(int id) {
+		repo.deleteById(id);
+	}
 }

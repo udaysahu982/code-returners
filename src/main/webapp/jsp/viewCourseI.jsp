@@ -29,11 +29,11 @@
 				<tr>
 					<td>${section.title}</td>
 				
-                	<td><a>view</a></td>
+                	<td><a href="/openViewSectionItems?courseId=${section.courseId}&sectionId=${section.id}">view</a></td>
                
                 	<td><a href="/openEditSection?id=${section.id}">Edit</a></td>
                 
-                	<td><a href="deleteSection>id=${section.id}">delete</a></td>
+                	<td><a href="deleteSection?id=${section.id}">delete</a></td>
                 </tr>
                 
                 

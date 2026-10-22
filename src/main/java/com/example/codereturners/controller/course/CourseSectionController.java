@@ -55,5 +55,15 @@ public class CourseSectionController {
 		return "redirect:/openViewCourseI?id="+section.getCourseId();
 		
 	}
+	
+	@GetMapping("/deleteSection")
+	public String deleteSection(@RequestParam("id") int id) {
+		
+		CourseSection section = serv.findById(id);
+		
+		serv.deleteSection(id);
+		System.out.println("item deleted");
+		return "redirect:/openViewCourseI?id="+section.getCourseId();
+	}
 
 }
