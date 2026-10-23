@@ -17,6 +17,11 @@ public class SectionItemService {
 	@Autowired
 	SectionItemRepo repo;
 	
+	
+	public SectionItem findById(int id) {
+		return repo.findById(id).orElseThrow(()-> new RuntimeException("Item not found"));
+	}
+	
 	public SectionItem addSectionItem(SectionItem item) {
 		return repo.save(item);
 	}
@@ -26,4 +31,17 @@ public class SectionItemService {
 		return repo.findAllByCourseIdAndSectionId(CourseId, sectionId);
 	}
 
+	public SectionItem updateSectionItem(SectionItem item, int id) {
+		
+			item.setId(id);
+		return repo.save(item); 
+	}
+	
+	public void deleteSectionItem(int id) {
+		repo.deleteById(id);
+	}
+	
+	public void deleteSectionItemBySectionId() {
+		
+	}
 }
