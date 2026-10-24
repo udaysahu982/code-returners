@@ -26,7 +26,8 @@
                 <th>Description</th>
                 <th>File</th>
                 <th>Video Link</th>
-                <th>Actions</th>
+                <th>Edit</th>
+                <th>Delete</th>
             </tr>
         </thead>
 
@@ -67,6 +68,11 @@
                     <td>
                         <a href="/openEditSectionItem?id=${item.id}">
                             Edit
+                        </a>
+                    </td>
+                     <td>
+                        <a href="/deleteSectionItem?id=${item.id}">
+                            Delete
                         </a>
                     </td>
                 </tr>

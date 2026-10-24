@@ -41,7 +41,7 @@ public class SectionItemService {
 		repo.deleteById(id);
 	}
 	
-	public void deleteSectionItemBySectionId() {
-		
+	public void deleteSectionItemBySectionId(int sectionId) {
+		repo.deleteAllBySectionId(sectionId);
 	}
 }

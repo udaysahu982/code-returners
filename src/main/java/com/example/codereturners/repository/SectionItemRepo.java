@@ -11,5 +11,7 @@ import com.example.codereturners.bean.SectionItem;
 public interface SectionItemRepo extends JpaRepository<SectionItem, Integer> {
 	
 	public List<SectionItem> findAllByCourseIdAndSectionId(int courseId, int sectionId);
+	
+	public void deleteAllBySectionId(int sectionId);
 
 }
