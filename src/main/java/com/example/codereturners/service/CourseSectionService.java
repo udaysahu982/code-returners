@@ -39,4 +39,8 @@ public class CourseSectionService {
 	public void deleteSection(int id) {
 		repo.deleteById(id);
 	}
+	
+	public void deleteAllSectionByCourseId(int courseId) {
+		repo.deleteAllByCourseId(courseId);
+	}
 }

@@ -11,13 +11,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.codereturners.bean.Course;
+import com.example.codereturners.service.CourseSectionService;
 import com.example.codereturners.service.CourseService;
+import com.example.codereturners.service.SectionItemService;
 
 @Controller
 public class CourseOperations {
 	
 	@Autowired
 	CourseService serv;
+	@Autowired
+	CourseSectionService csServ;
+	@Autowired
+	SectionItemService siServ;
+	
 	
 	@GetMapping("/openEditCourse")
 	public String openEditCourse(@RequestParam("id") int id, Model model) {
@@ -46,6 +53,8 @@ public class CourseOperations {
 	public String deleteCourse(int id) {
 		
 		serv.deleteCourse(id);
+		csServ.deleteAllSectionByCourseId(id);
+		siServ.deleteAllSectionItemByCourseId(id);
 		
 		return "redirect:/viewAllCourses";
 	}
