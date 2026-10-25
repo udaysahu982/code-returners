@@ -10,5 +10,7 @@ import java.util.List;
 public interface CourseSectionRepo extends JpaRepository<CourseSection, Integer> {
 	
 	public  List<CourseSection> findByCourseId(int courseId);
+	
+	public void deleteAllByCourseId(int courseId);
 
 }

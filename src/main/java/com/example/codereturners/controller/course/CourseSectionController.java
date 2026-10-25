@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.codereturners.bean.CourseSection;
 import com.example.codereturners.service.CourseSectionService;
+import com.example.codereturners.service.SectionItemService;
 
 
 @Controller
@@ -17,6 +18,9 @@ public class CourseSectionController {
 	
 	@Autowired
 	CourseSectionService serv;
+	
+	@Autowired
+	SectionItemService siService;
 	
 	@GetMapping("/openAddSection")
 	public String openAddCourseSection(@RequestParam("id") int id, Model model) {
@@ -62,6 +66,7 @@ public class CourseSectionController {
 		CourseSection section = serv.findById(id);
 		
 		serv.deleteSection(id);
+		siService.deleteAllSectionItemBySectionId(id);
 		System.out.println("item deleted");
 		return "redirect:/openViewCourseI?id="+section.getCourseId();
 	}

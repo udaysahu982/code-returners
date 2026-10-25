@@ -106,4 +106,13 @@ public class CourseSectionItemController {
 	            .body(item.getFile());
 	}
 	
+	@GetMapping("/deleteSectionItem")
+	public String deleteSectionItem(@RequestParam("id") int id) {
+		
+		SectionItem item=serv.findById(id);
+		serv.deleteSectionItem(id);
+		
+		return "redirect:/openViewSectionItems?courseId="+item.getCourseId()+"&sectionId="+item.getSectionId();
+	}
+	
 }
