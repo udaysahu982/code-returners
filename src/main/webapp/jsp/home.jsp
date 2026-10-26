@@ -19,6 +19,13 @@
   <div>
  <h2> veiw all Courses </h2><a href="/viewAllCourses">view Course</a>
  </div>
+ <div>
+ <h2> Add Category </h2><a href="/openAddCategory">Add Category</a>
+ </div>
+ <div>
+ <h2> View All Category </h2><a href="/viewAllCategory">view All Category</a>
+ </div>
+ 
  
 </body>
 </html>
