@@ -2,21 +2,31 @@ package com.example.codereturners.bean;
 
 import java.time.LocalDateTime;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 
 
-//@Entity
-//@Table(name = "users")
+
+@Entity
+@Table(name = "users")
 public class User {
 	
-//	@Id
-//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
 	private String email;
 	private String phone;
 	private String pass;
 	private LocalDateTime regDate;
+	
+	@Enumerated(EnumType.STRING)
 	private Role role;
 	
 	
@@ -109,7 +119,7 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", email=" + email + ", phone=" + phone + ", pass=" + pass
+		return "User [id=" + id + ", name=" + name + ", email=" + email + ", phone=" + phone
 				+ ", regDate=" + regDate + ", role=" + role + "]";
 	}
 	
