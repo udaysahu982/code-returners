@@ -18,4 +18,12 @@ public class UserService {
 	public User addUser(User user) {
 		return repo.save(user);
 	}
+	
+	public User findbyEmail(String email) {
+		return repo.findByEmail(email);
+	}
+	
+	public boolean emailExists(String email) {
+		return repo.existsByEmail(email);
+	}
 }

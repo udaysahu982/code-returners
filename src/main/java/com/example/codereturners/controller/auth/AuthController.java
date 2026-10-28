@@ -24,15 +24,25 @@ public class AuthController {
 	@Autowired
 	UserService serv;
 	
-	@PostMapping("/studentSignup")
+	@PostMapping("/signup")
 	public ResponseEntity<?> studentRegister(@RequestBody User user) {
 	
+		if(serv.emailExists(user.getEmail())) {
+			 return ResponseEntity
+					 .status(HttpStatus.CONFLICT)
+					 .body("Email already registered");
+		}
 		System.out.println("The controller student signup is called");
 		user.setRegDate(LocalDateTime.now());
 		user.setRole(Role.ROLE_STUDENT);
 		
-		return ResponseEntity.status(HttpStatus.CREATED).body(serv.addUser(user));
+		serv.addUser(user);
+		
+		return ResponseEntity
+				.status(HttpStatus.CREATED)
+				.body("signup successful");
 		
 	}
 
+	
 }
