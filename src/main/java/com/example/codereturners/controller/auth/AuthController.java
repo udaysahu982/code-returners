@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.codereturners.bean.LoginRequest;
 import com.example.codereturners.bean.Role;
 import com.example.codereturners.bean.User;
 import com.example.codereturners.service.UserService;
@@ -27,7 +28,7 @@ public class AuthController {
 	@PostMapping("/signup")
 	public ResponseEntity<?> studentRegister(@RequestBody User user) {
 	
-		if(serv.emailExists(user.getEmail())) {
+		if(serv.existsByEmail(user.getEmail())) {
 			 return ResponseEntity
 					 .status(HttpStatus.CONFLICT)
 					 .body("Email already registered");
@@ -43,6 +44,23 @@ public class AuthController {
 				.body("signup successful");
 		
 	}
+	
+	public ResponseEntity<?> studentLogin(@RequestBody LoginRequest request){
+	
+		String identifier = request.getIdentifier();
+		String password = request.getPassword();
+		
+		User user;
+		
+		if (serv.existsByEmail(identifier) ) {
+			
+			user = serv.findbyEmail(identifier);
+		}
+		else if(serv.existsByPhone(identifier)) {
+			user = serv.findByPhone(identifier);
+		}
+	}
+	
 
 	
 }

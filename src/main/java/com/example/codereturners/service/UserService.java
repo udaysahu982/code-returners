@@ -23,7 +23,15 @@ public class UserService {
 		return repo.findByEmail(email);
 	}
 	
-	public boolean emailExists(String email) {
+	public User findByPhone(String phone) {
+		return repo.findByPhone(phone);
+	}
+	
+	public boolean existsByEmail(String email) {
 		return repo.existsByEmail(email);
+	}
+	
+	public boolean existsByPhone(String phone) {
+		return repo.existsByPhone(phone);
 	}
 }
