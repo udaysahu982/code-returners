@@ -1,9 +1,12 @@
 package com.example.codereturners.controller.auth;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -45,20 +48,32 @@ public class AuthController {
 		
 	}
 	
+	@PostMapping("/login")
 	public ResponseEntity<?> studentLogin(@RequestBody LoginRequest request){
 	
 		String identifier = request.getIdentifier();
 		String password = request.getPassword();
 		
-		User user;
+		if(!serv.existsByEmailOrPhone(identifier, identifier) ) {
+			return ResponseEntity.status(HttpStatus.CONFLICT).body("Invalid Credentials");
+		}
 		
-		if (serv.existsByEmail(identifier) ) {
-			
-			user = serv.findbyEmail(identifier);
+		User user=serv.findByEmailOrPhone(identifier, identifier);
+		
+		if(!password.equals(user.getPass())) {
+			return ResponseEntity.status(HttpStatus.CONFLICT).body("Invalid Credentials");
 		}
-		else if(serv.existsByPhone(identifier)) {
-			user = serv.findByPhone(identifier);
-		}
+		
+		Map<String, Object> response = new HashMap<>();
+		response.put("message", "login success");
+		response.put("id", user.getId());
+		response.put("name", user.getName());
+		response.put("email", user.getEmail());
+		response.put("name", user.getPhone());
+		response.put("role", user.getRole());
+		
+		return ResponseEntity.ok(response);		
+		
 	}
 	
 
