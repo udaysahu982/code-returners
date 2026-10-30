@@ -34,4 +34,12 @@ public class UserService {
 	public boolean existsByPhone(String phone) {
 		return repo.existsByPhone(phone);
 	}
+	
+	public User findByEmailOrPhone(String email, String phone) {
+		return repo.findByEmailOrPhone(email, phone);
+	}
+	
+	public boolean existsByEmailOrPhone(String email, String phone) {
+		return repo.existsByEmailOrPhone(email, phone);
+	}
 }
