@@ -1,8 +1,13 @@
 
 import axios from 'axios';
 import React, { useState } from 'react';
-
 const API ="http://localhost:8080/api/login";
+
+const ROLE_ROUTES ={
+    ROLE_ADMIN :  "/admin/dashboard",
+    ROLE_TEACHER: "/teacher/dashboard",
+    ROLE_STUDENT: "/student/dasboard",
+};
 
 const Login = () => {
 

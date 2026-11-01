@@ -7,8 +7,6 @@ function App() {
   
   return (
     <>
-   
-    <div>this is app.jsx</div> 
      <Home/>
    
     </>
