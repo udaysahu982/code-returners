@@ -1,6 +1,7 @@
 
 import axios from 'axios';
 import React, { useState } from 'react';
+import {useNavigate} from 'react-router-dom';
 const API ="http://localhost:8080/api/login";
 
 const ROLE_ROUTES ={
@@ -25,14 +26,17 @@ const Login = () => {
     };
 
     const handleSubmit = async(e) => {
+        const navigate = useNavigate();
         e.preventDefault();
 
         try{
             console.log("login details are submitting",form);
-            await axios.post(API,form)
+    const response = await axios.post(API,form)
+    const user = response.data;
             setIsError(false)
             setMessage("Login Success")
             setForm({identifier:"", password:""})
+            navigate('/')
         }
         catch(err){
             setIsError(true)

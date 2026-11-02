@@ -34,8 +34,15 @@ public class AuthController {
 		if(serv.existsByEmail(user.getEmail())) {
 			 return ResponseEntity
 					 .status(HttpStatus.CONFLICT)
-					 .body("Email already registered");
+					 .body("This Email already used");
 		}
+		
+		if(serv.existsByPhone(user.getPhone())) {
+			return  ResponseEntity
+					 .status(HttpStatus.CONFLICT)
+					 .body("This Phone already used");
+		}
+		
 		System.out.println("The controller student signup is called");
 		user.setRegDate(LocalDateTime.now());
 		user.setRole(Role.ROLE_STUDENT);
@@ -54,14 +61,14 @@ public class AuthController {
 		String identifier = request.getIdentifier();
 		String password = request.getPassword();
 		
-		if(!serv.existsByEmailOrPhone(identifier, identifier) ) {
-			return ResponseEntity.status(HttpStatus.CONFLICT).body("Invalid Credentials");
+		if(identifier == null || password == null) {
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Missing credentials");
 		}
-		
+				
 		User user=serv.findByEmailOrPhone(identifier, identifier);
 		
-		if(!password.equals(user.getPass())) {
-			return ResponseEntity.status(HttpStatus.CONFLICT).body("Invalid Credentials");
+		if(user == null || !password.equals(user.getPass())) {
+			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid Credentials");
 		}
 		
 		Map<String, Object> response = new HashMap<>();
@@ -69,14 +76,10 @@ public class AuthController {
 		response.put("id", user.getId());
 		response.put("name", user.getName());
 		response.put("email", user.getEmail());
-		response.put("name", user.getPhone());
+		response.put("phone", user.getPhone());
 		response.put("role", user.getRole());
 		
 		return ResponseEntity.ok(response);		
-		
-	}
-	
-	public void login() {
 		
 	}
 	
