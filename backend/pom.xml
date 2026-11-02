@@ -75,6 +75,18 @@
    			 <groupId>org.glassfish.web</groupId>
    			 <artifactId>jakarta.servlet.jsp.jstl</artifactId>
 		</dependency>
+		
+				<!-- Spring Security -->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		
+		<!-- JWT Resource Server and JWT Encoder/Decoder -->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
+		</dependency>
 	
 	</dependencies>
 

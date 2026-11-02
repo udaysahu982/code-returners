@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import './App.css';
-import Home from './pages/Home'
+import ProjectRoutes from './Routes/ProjectRoutes'
 
 function App() {
   
   return (
     <>
-     <Home/>
+   <ProjectRoutes/>
    
     </>
   );
