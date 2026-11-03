@@ -1,10 +1,11 @@
 
-import { useState } from "react";
-import axios from "axios";
+import axios from 'axios';
+import React, { useState } from 'react';
 
-const API = "http://localhost:8080/api/signup";
+const API = "http://localhost:8080/api/instructorSignup";
 
-const Studentsignup = () => {
+const Instructorsignup = () => {
+
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -26,7 +27,7 @@ const Studentsignup = () => {
       console.log("Submitting form:", form);
       await axios.post(API, form);
       setIsError(false);
-      setMessage("Signup successful!");
+      setMessage("Instructor registration successful!");
       setForm({ name: "", email: "", phone: "", pass: "" });
     } catch (err) {
       setIsError(true);
@@ -49,14 +50,14 @@ const Studentsignup = () => {
 
         {/* Heading */}
         <h2 className="text-center text-3xl font-bold tracking-tight text-gray-900">
-          Create Account
+          Become an Instructor
         </h2>
 
         <p className="mt-3 mb-8 text-center text-sm leading-6 text-gray-500">
-          Join CodeReturners and start your learning journey.
+          Join CodeReturners and share your knowledge with aspiring learners.
         </p>
 
-        {/* Signup Form */}
+        {/* Instructor Signup Form */}
         <form onSubmit={handleSubmit} className="space-y-5">
 
           <div>
@@ -64,7 +65,7 @@ const Studentsignup = () => {
               htmlFor="name"
               className="mb-2 block text-sm font-semibold text-gray-700"
             >
-              Full Name
+              Instructor Name
             </label>
 
             <input
@@ -85,7 +86,7 @@ const Studentsignup = () => {
               htmlFor="email"
               className="mb-2 block text-sm font-semibold text-gray-700"
             >
-              Email Address
+              Professional Email Address
             </label>
 
             <input
@@ -106,7 +107,7 @@ const Studentsignup = () => {
               htmlFor="phone"
               className="mb-2 block text-sm font-semibold text-gray-700"
             >
-              Phone Number
+              Contact Number
               <span className="ml-1 font-normal text-gray-400">
                 (Optional)
               </span>
@@ -116,7 +117,7 @@ const Studentsignup = () => {
               id="phone"
               name="phone"
               type="tel"
-              placeholder="Enter your phone number"
+              placeholder="Enter your contact number"
               value={form.phone}
               onChange={handleChange}
               autoComplete="tel"
@@ -129,7 +130,7 @@ const Studentsignup = () => {
               htmlFor="pass"
               className="mb-2 block text-sm font-semibold text-gray-700"
             >
-              Password
+              Create Password
             </label>
 
             <input
@@ -150,7 +151,7 @@ const Studentsignup = () => {
             type="submit"
             className="w-full rounded-lg bg-indigo-600 px-4 py-3.5 text-sm font-semibold text-white shadow-md transition duration-200 hover:-translate-y-0.5 hover:bg-indigo-700 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-indigo-200 active:translate-y-0"
           >
-            Create Account
+            Register as Instructor
           </button>
 
         </form>
@@ -173,7 +174,7 @@ const Studentsignup = () => {
 
         {/* Footer */}
         <p className="mt-7 text-center text-xs text-gray-400">
-          Your future in tech starts here.
+          Inspire learners. Share knowledge. Build futures.
         </p>
 
       </div>
@@ -181,4 +182,4 @@ const Studentsignup = () => {
   );
 };
 
-export default Studentsignup;
+export default Instructorsignup;

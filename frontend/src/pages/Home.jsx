@@ -6,9 +6,7 @@ import Sidebarfunctionality from '../functionalities/Sidebarfunctionality'
 
 const Home = () => {
   return (
-    <div>
-      <Sidebarfunctionality/>
-      
+    <div>      
       <h1>Home</h1>
       
     </div>

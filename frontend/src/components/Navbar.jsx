@@ -9,7 +9,7 @@ const Navbar = ({onMenuClick}) => {
   const navigate = useNavigate();
 
   const homePage = () =>{
-        navigate('/home');
+        navigate('/');
   }
 
    const coursesPage = () =>{
@@ -31,19 +31,19 @@ const Navbar = ({onMenuClick}) => {
 
       {/* Navigation Links */}
       <nav className="hidden md:flex items-center gap-8">
-        <a href="#" className="text-blue-600 font-semibold hover:text-blue-700" onClick={homePage}>
+        <a className="text-blue-600 font-semibold hover:text-blue-700" onClick={homePage}>
           Home
         </a>
 
-        <a href="#" className="text-gray-600 font-medium hover:text-blue-600 transition" onClick={navigate('/courses')}>
+        <a  className="text-gray-600 font-medium hover:text-blue-600 transition" onClick={coursesPage}>
           Courses
         </a>
 
-        <a href="#" className="text-gray-600 font-medium hover:text-blue-600 transition" onClick={navigate('/aboutus')}>
+        <a  className="text-gray-600 font-medium hover:text-blue-600 transition" onClick={aboutusPage}>
           About Us
         </a>
 
-        <a href="#" className="text-gray-600 font-medium hover:text-blue-600 transition" onClick={navigate('/contactus')}>
+        <a className="text-gray-600 font-medium hover:text-blue-600 transition" onClick={contactusPage}>
           Contact Us
         </a>
       </nav>

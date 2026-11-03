@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Login from './Login';
-import Studentsignup from './studentSignup';
+import Studentsignup from './signup/Studentsignup';
 
 const Auth = () => {
 
