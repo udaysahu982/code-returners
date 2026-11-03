@@ -16,6 +16,10 @@ const Sidebar = ({ isOpen, onClose }) => {
     onClose;
   }
 
+  const facultySignup = () =>{
+    navigate("/instructorsignup")
+  }
+
 
   return (
        <>
@@ -104,8 +108,7 @@ const Sidebar = ({ isOpen, onClose }) => {
           </p>
 
           <a
-            href="/signup"
-            onClick={onClose}
+            onClick={facultySignup}
             className="block p-3 rounded-lg hover:bg-blue-50 hover:text-blue-600"
           >
             Register as instructor

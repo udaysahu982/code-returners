@@ -28,7 +28,7 @@ public class AuthController {
 	@Autowired
 	UserService serv;
 	
-	@PostMapping("/signup")
+	@PostMapping("/studentSignup")
 	public ResponseEntity<?> studentRegister(@RequestBody User user) {
 	
 		if(serv.existsByEmail(user.getEmail())) {
