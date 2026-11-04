@@ -8,6 +8,8 @@ import About from '../pages/About';
 import Courses from '../pages/Courses';
 import MainLayout from '../layouts/MainLayout';
 import Instructorsignup from '../features/Auth/signup/Instructorsignup';
+import Studentdashboard from '../features/student/Studentdashboard';
+import Instructordashboard from '../features/instructor/Instructordashboard';
 
 const ProjectRoutes = () => {
   return (
@@ -18,6 +20,8 @@ const ProjectRoutes = () => {
         <Route path='/contactus' element={<Contact/>}/>
         <Route path='/aboutus' element={<About/>}/>
         <Route path='/courses' element={<Courses/>}/>
+        <Route path='/student/dashboard' element={<Studentdashboard/>}></Route>
+        <Route path='/instructor/dashboard' element={<Instructordashboard/>}></Route>
         </Route>
         <Route path="/studentsignup" element={<Studentsignup/>}/>
         <Route path="//instructorsignup" element={<Instructorsignup/>}/>

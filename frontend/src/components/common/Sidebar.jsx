@@ -1,5 +1,5 @@
 import React from 'react'
-import Menu from './smallcomponent/Menu'
+import Menu from '../smallcomponent/Menu'
 import { useNavigate } from 'react-router-dom'
 
 const Sidebar = ({ isOpen, onClose }) => {

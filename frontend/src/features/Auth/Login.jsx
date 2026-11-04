@@ -4,13 +4,9 @@ import React, { useState } from 'react';
 import {useNavigate} from 'react-router-dom';
 const API ="http://localhost:8080/api/login";
 
-const ROLE_ROUTES ={
-    ROLE_ADMIN :  "/admin/dashboard",
-    ROLE_TEACHER: "/teacher/dashboard",
-    ROLE_STUDENT: "/student/dasboard",
-};
-
 const Login = () => {
+    
+    const navigate = useNavigate();
 
     const [form, setForm] = useState({
         identifier: "",
@@ -26,7 +22,6 @@ const Login = () => {
     };
 
     const handleSubmit = async(e) => {
-        const navigate = useNavigate();
         e.preventDefault();
 
         try{
@@ -36,7 +31,22 @@ const Login = () => {
             setIsError(false)
             setMessage("Login Success")
             setForm({identifier:"", password:""})
-            navigate('/')
+            const role = user.role;
+            alert("login");
+            if(role === "ROLE_STUDENT"){
+                navigate("/student/dashboard");
+            }
+            else if(role === "ROLE_INSTRUCTOR"){
+                navigate("/instructor/dashboard");
+            }
+            else if(role === "ROLE_ADMIN"){
+                navigate("/admin/dashboard");
+            }
+            else{
+                setIsError(true);
+                setMessage("Unknown role. Please contact support.");
+                navigate("/");
+            }
         }
         catch(err){
             setIsError(true)

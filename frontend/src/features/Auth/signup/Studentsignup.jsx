@@ -2,7 +2,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-const API = "http://localhost:8080/api/studentSignup";
+const API = "http://localhost:8080/api/studentsignup";
 
 const Studentsignup = () => {
   const [form, setForm] = useState({

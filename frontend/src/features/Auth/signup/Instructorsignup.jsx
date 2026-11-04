@@ -2,7 +2,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 
-const API = "http://localhost:8080/api/instructorSignup";
+const API = "http://localhost:8080/api/instructorsignup";
 
 const Instructorsignup = () => {
 

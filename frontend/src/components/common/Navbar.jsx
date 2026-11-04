@@ -1,7 +1,7 @@
 import React from 'react'
-import Logo from './common/Logo'
-import Searchbar from './common/Searchbar'
-import Menu from './smallcomponent/Menu'
+import Logo from './Logo'
+import Searchbar from './Searchbar'
+import Menu from '../smallcomponent/Menu'
 import { useNavigate } from 'react-router-dom'
 
 const Navbar = ({onMenuClick}) => {
