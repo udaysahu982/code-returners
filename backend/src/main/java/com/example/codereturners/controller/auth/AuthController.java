@@ -28,7 +28,7 @@ public class AuthController {
 	@Autowired
 	UserService serv;
 	
-	@PostMapping("/studentSignup")
+	@PostMapping("/studentsignup")
 	public ResponseEntity<?> studentRegister(@RequestBody User user) {
 	
 		if(serv.existsByEmail(user.getEmail())) {
@@ -46,6 +46,33 @@ public class AuthController {
 		System.out.println("The controller student signup is called");
 		user.setRegDate(LocalDateTime.now());
 		user.setRole(Role.ROLE_STUDENT);
+		
+		serv.addUser(user);
+		
+		return ResponseEntity
+				.status(HttpStatus.CREATED)
+				.body("signup successful");
+		
+	}
+	
+	@PostMapping("/instructorsignup")
+	public ResponseEntity<?> instructorRegister(@RequestBody User user) {
+	
+		if(serv.existsByEmail(user.getEmail())) {
+			 return ResponseEntity
+					 .status(HttpStatus.CONFLICT)
+					 .body("This Email already used");
+		}
+		
+		if(serv.existsByPhone(user.getPhone())) {
+			return  ResponseEntity
+					 .status(HttpStatus.CONFLICT)
+					 .body("This Phone already used");
+		}
+		
+		System.out.println("The controller student signup is called");
+		user.setRegDate(LocalDateTime.now());
+		user.setRole(Role.ROLE_INSTRUCTOR);
 		
 		serv.addUser(user);
 		
