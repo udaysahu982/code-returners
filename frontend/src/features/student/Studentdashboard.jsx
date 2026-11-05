@@ -1,31 +1,35 @@
 
 import React from 'react';
+import Sidebarstudent from './Sidebarstudent';
+import { Outlet } from 'react-router-dom';
+import Sidebarfunctionality from '../../functionalities/Sidebarfunctionality';
 
 const Studentdashboard = () => {
 
     return (
-        <div className="min-h-screen w-full bg-slate-100">
+        <>
+        <Sidebarfunctionality/>
+        <div className="h-screen w-full bg-slate-100 overflow-hidden">
 
-            <div className="flex min-h-screen w-full pt-[10px]">
+            <div className="flex h-full w-full gap-[5px] pt-[12px]">
 
                 {/* LEFT SIDE - Sidebar */}
-                <aside className="w-[18%] min-w-[220px] mt-[5px]  bg-white border border-gray-200 rounded-xl p-5">
-
-                </aside>
+                
+                <Sidebarstudent/>
 
 
                 {/* RIGHT SIDE - Main Content */}
-                <section className="flex-1 min-w-0 ">
+                <section className="flex-1 min-w-0 h-[calc(100%-12px)]">
 
                     {/* Top Navbar */}
-                    <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center justify-between">
 
                     </div>
 
 
                     {/* Main Dashboard Area */}
-                    <div className="w-full min-h-[calc(100vh-70px)] bg-white rounded-xl border border-gray-200 shadow-sm p-6">
-
+                    <div className="w-full h-full bg-white border border-gray-200 rounded-xl shadow-sm p-6">
+                        <Outlet/>
                     </div>
 
                 </section>
@@ -33,6 +37,7 @@ const Studentdashboard = () => {
             </div>
 
         </div>
+        </>
     );
 };
 

@@ -10,6 +10,13 @@ import MainLayout from '../layouts/MainLayout';
 import Instructorsignup from '../features/Auth/signup/Instructorsignup';
 import Studentdashboard from '../features/student/Studentdashboard';
 import Instructordashboard from '../features/instructor/Instructordashboard';
+import Overview from '../features/dashboardcomponents/Overview';
+import BrowseCourses from '../features/dashboardcomponents/BrowseCourses';
+import Progress from '../features/dashboardcomponents/Progress';
+import Certificates from '../features/dashboardcomponents/Certificates';
+import Mycourses from '../features/dashboardcomponents/Mycourses';
+import Assignments from '../features/dashboardcomponents/Assignments';
+import Profile from '../features/dashboardcomponents/Profile';
 
 const ProjectRoutes = () => {
   return (
@@ -20,9 +27,24 @@ const ProjectRoutes = () => {
         <Route path='/contactus' element={<Contact/>}/>
         <Route path='/aboutus' element={<About/>}/>
         <Route path='/courses' element={<Courses/>}/>
-        <Route path='/student/dashboard' element={<Studentdashboard/>}></Route>
-        <Route path='/instructor/dashboard' element={<Instructordashboard/>}></Route>
         </Route>
+
+         {/* Student Dashboard Layout */}
+         <Route path="/student" element={<Studentdashboard/>}>
+
+                <Route index element={<Navigate to="overview" replace />} />
+
+                <Route path="overview" element={<Overview />} />
+                <Route path="progress" element={<Progress />} />
+                <Route path="browsecourses" element={<BrowseCourses />} />
+                <Route path="mycourses" element={<Mycourses />} />
+                <Route path="assignments" element={<Assignments />} />
+                <Route path="certificates" element={<Certificates />} />
+                <Route path="profile" element={<Profile />} />
+
+          </Route>
+
+
         <Route path="/studentsignup" element={<Studentsignup/>}/>
         <Route path="//instructorsignup" element={<Instructorsignup/>}/>
         <Route path="/login" element={<Login/>}/>
