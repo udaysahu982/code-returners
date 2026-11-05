@@ -23,6 +23,11 @@ const Navbar = ({onMenuClick}) => {
    const contactusPage = () =>{
         navigate('/contactus');
   }
+
+  const  dashboardPage = () =>{
+    navigate('/student')
+  }
+
   return (
      <header className="w-full h-20 px-6 md:px-12 lg:px-20 flex items-center justify-between bg-white shadow-md">
 
@@ -45,6 +50,9 @@ const Navbar = ({onMenuClick}) => {
 
         <a className="text-gray-600 font-medium hover:text-blue-600 transition" onClick={contactusPage}>
           Contact Us
+        </a>
+         <a className="text-gray-600 font-medium hover:text-blue-600 transition" onClick={dashboardPage}>
+          My Dashboard
         </a>
       </nav>
 

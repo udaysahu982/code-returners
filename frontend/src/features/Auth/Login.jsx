@@ -34,7 +34,7 @@ const Login = () => {
             const role = user.role;
             alert("login");
             if(role === "ROLE_STUDENT"){
-                navigate("/student/dashboard");
+                navigate("/student");
             }
             else if(role === "ROLE_INSTRUCTOR"){
                 navigate("/instructor/dashboard");
