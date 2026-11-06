@@ -36,22 +36,22 @@ const Navbar = ({onMenuClick}) => {
 
       {/* Navigation Links */}
       <nav className="hidden md:flex items-center gap-8">
-        <a className="text-blue-600 font-semibold hover:text-blue-700" onClick={homePage}>
+        <a className="text-blue-600 font-semibold cursor-pointer hover:text-blue-700" onClick={homePage}>
           Home
         </a>
 
-        <a  className="text-gray-600 font-medium hover:text-blue-600 transition" onClick={coursesPage}>
+        <a  className="text-gray-600 font-medium cursor-pointer hover:text-blue-600 transition" onClick={coursesPage}>
           Courses
         </a>
 
-        <a  className="text-gray-600 font-medium hover:text-blue-600 transition" onClick={aboutusPage}>
+        <a  className="text-gray-600 font-medium cursor-pointer hover:text-blue-600 transition" onClick={aboutusPage}>
           About Us
         </a>
 
-        <a className="text-gray-600 font-medium hover:text-blue-600 transition" onClick={contactusPage}>
+        <a className="text-gray-600 font-medium cursor-pointer hover:text-blue-600 transition" onClick={contactusPage}>
           Contact Us
         </a>
-         <a className="text-gray-600 font-medium hover:text-blue-600 transition" onClick={dashboardPage}>
+         <a className="text-gray-600 font-medium cursor-pointer hover:text-blue-600 transition" onClick={dashboardPage}>
           My Dashboard
         </a>
       </nav>
