@@ -44,6 +44,21 @@ const ProjectRoutes = () => {
 
           </Route>
 
+          {/* Instructor Dashboard Layout */}
+          <Route path="/instructor" element={<Instructordashboard/>}>
+
+                <Route index element={<Navigate to="overview" replace />} />
+
+                <Route path="overview" element={<Overview />} />
+                <Route path="progress" element={<Progress />} />
+                <Route path="browsecourses" element={<BrowseCourses />} />
+                <Route path="mycourses" element={<Mycourses />} />
+                <Route path="assignments" element={<Assignments />} />
+                <Route path="certificates" element={<Certificates />} />
+                <Route path="profile" element={<Profile />} />
+
+          </Route>
+
 
         <Route path="/studentsignup" element={<Studentsignup/>}/>
         <Route path="//instructorsignup" element={<Instructorsignup/>}/>
