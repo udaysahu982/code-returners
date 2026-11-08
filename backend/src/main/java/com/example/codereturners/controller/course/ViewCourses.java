@@ -1,26 +1,37 @@
 package com.example.codereturners.controller.course;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.example.codereturners.bean.Course;
 import com.example.codereturners.service.CourseService;
 
-@Controller
-public class CourseHome {
+@RestController
+@RequestMapping("/api/courses")
+@CrossOrigin(origins = "http://localhost:5173")
+public class ViewCourses {
 	
 	@Autowired
 	CourseService courseService;
 	
-	@GetMapping("/openHome")
-	public String openCourseHome() {
-		return "home";
-	}
+	@GetMapping("/viewAllCourses")
+	public ResponseEntity<List<Course>> viewAllCourses(){
+		
+		List<Course> courses = courseService.viewAllCourses();
+		System.out.println(courses.toString());
+		
+		return ResponseEntity.ok(courses);	}
+	
 	
 	@GetMapping("/openCreateCourse")
 	public String openCreateCourse() {
@@ -35,13 +46,7 @@ public class CourseHome {
 		return "redirect:/openHome";
 	}
 	
-	@GetMapping("/viewAllCourses")
-	public String viewAllCourses(Model model) {
-		
-		model.addAttribute("courses", courseService.viewAllCourses());
-		
-		return "viewCourses";
-	}
+	
 	
 	
 }
