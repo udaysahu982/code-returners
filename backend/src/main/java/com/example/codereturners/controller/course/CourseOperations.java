@@ -1,6 +1,8 @@
 package com.example.codereturners.controller.course;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,11 +35,11 @@ public class CourseOperations {
 	
 	
 	@PostMapping("/createCourse")
-	public ResponseEntity<Course> createCourse(@RequestBody Course course) {
+	public ResponseEntity<String> createCourse(@RequestBody Course course) {
 		
-		serv.addCourse(course);
+		 serv.addCourse(course);
 		
-		return "redirect:/openHome";
+		return ResponseEntity.status(HttpStatus.CREATED).body("Course Successfully Created");
 	}
 	
 	

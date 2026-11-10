@@ -22,6 +22,7 @@ public class Course {
 	private String level;
 	private double price;
 	private LocalDateTime creationDate;
+	private String imageUrl;
 	
 	
 	public Course() {
@@ -31,7 +32,7 @@ public class Course {
 
 
 	public Course(int id, int facultyId, int category_id, String title, String description, String level, double price,
-			LocalDateTime creationDate) {
+			LocalDateTime creationDate, String imageUrl) {
 		super();
 		this.id = id;
 		this.facultyId = facultyId;
@@ -41,6 +42,7 @@ public class Course {
 		this.level = level;
 		this.price = price;
 		this.creationDate = creationDate;
+		this.imageUrl = imageUrl;
 	}
 
 
@@ -124,13 +126,24 @@ public class Course {
 	}
 
 
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
+
+
 	@Override
 	public String toString() {
 		return "Course [id=" + id + ", facultyId=" + facultyId + ", category_id=" + category_id + ", title=" + title
 				+ ", description=" + description + ", level=" + level + ", price=" + price + ", creationDate="
-				+ creationDate + "]";
+				+ creationDate + ", imageUrl=" + imageUrl + "]";
 	}
-	
+
+
 	
 	
 	

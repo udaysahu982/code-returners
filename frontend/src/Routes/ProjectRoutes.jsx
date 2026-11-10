@@ -17,6 +17,7 @@ import Certificates from '../features/dashboardcomponents/Certificates';
 import Mycourses from '../features/dashboardcomponents/Mycourses';
 import Assignments from '../features/dashboardcomponents/Assignments';
 import Profile from '../features/dashboardcomponents/Profile';
+import TestFunctionality from '../Test/TestFunctionality';
 
 const ProjectRoutes = () => {
   return (
@@ -41,6 +42,7 @@ const ProjectRoutes = () => {
                 <Route path="assignments" element={<Assignments />} />
                 <Route path="certificates" element={<Certificates />} />
                 <Route path="profile" element={<Profile />} />
+                <Route path="test" element={<TestFunctionality/>} />
 
           </Route>
 
