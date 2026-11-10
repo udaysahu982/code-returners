@@ -33,20 +33,6 @@ public class ViewCourses {
 		return ResponseEntity.ok(courses);	}
 	
 	
-	@GetMapping("/openCreateCourse")
-	public String openCreateCourse() {
-		return "createCourse";
-	}
-	
-	@PostMapping("/createCourse")
-	public String createCourse(@ModelAttribute Course course) {
-		
-		courseService.addCourse(course);
-		
-		return "redirect:/openHome";
-	}
-	
-	
 	
 	
 }
