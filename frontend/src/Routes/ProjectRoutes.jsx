@@ -28,6 +28,7 @@ const ProjectRoutes = () => {
         <Route path='/contactus' element={<Contact/>}/>
         <Route path='/aboutus' element={<About/>}/>
         <Route path='/courses' element={<Courses/>}/>
+        <Route path="test" element={<TestFunctionality/>} />
         </Route>
 
          {/* Student Dashboard Layout */}
@@ -42,7 +43,6 @@ const ProjectRoutes = () => {
                 <Route path="assignments" element={<Assignments />} />
                 <Route path="certificates" element={<Certificates />} />
                 <Route path="profile" element={<Profile />} />
-                <Route path="test" element={<TestFunctionality/>} />
 
           </Route>
 
