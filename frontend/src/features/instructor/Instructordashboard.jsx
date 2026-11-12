@@ -1,6 +1,7 @@
 import React from 'react'
 import Sidebarfunctionality from '../../functionalities/Sidebarfunctionality'
 import { Outlet } from 'react-router-dom'
+import Sidebarfaculty from './Sidebarfaculty'
 
 const Instructordashboard = () => {
   return (
@@ -12,7 +13,7 @@ const Instructordashboard = () => {
 
                 {/* LEFT SIDE - Sidebar */}
                 
-              
+              <Sidebarfaculty/>
 
 
                 {/* RIGHT SIDE - Main Content */}

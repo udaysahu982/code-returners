@@ -10,9 +10,11 @@ import {
     User,
     LogOut
 } from 'lucide-react';
+import { NavLink } from 'react-router-dom';
 
 const menuItems = [
     { name: "Overview", path: "/instructor/overview", icon: LayoutDashboard },
+    { name: "CreateCourse", path: "/instructor/createCourse", icon: LayoutDashboard },
     { name: "Progress", path: "/instructor/progress", icon: TrendingUp },
     { name: "Browse Course", path: "/instructor/browsecourses", icon: BookOpen },
     { name: "My Course", path: "/instructor/mycourses", icon: GraduationCap },
