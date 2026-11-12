@@ -18,6 +18,7 @@ import Mycourses from '../features/dashboardcomponents/Mycourses';
 import Assignments from '../features/dashboardcomponents/Assignments';
 import Profile from '../features/dashboardcomponents/Profile';
 import TestFunctionality from '../Test/TestFunctionality';
+import CreateCourse from '../features/instructor/functionalities/CreateCourse';
 
 const ProjectRoutes = () => {
   return (
@@ -52,6 +53,7 @@ const ProjectRoutes = () => {
                 <Route index element={<Navigate to="overview" replace />} />
 
                 <Route path="overview" element={<Overview />} />
+                <Route path="createCourse" element={<CreateCourse />} />
                 <Route path="progress" element={<Progress />} />
                 <Route path="browsecourses" element={<BrowseCourses />} />
                 <Route path="mycourses" element={<Mycourses />} />

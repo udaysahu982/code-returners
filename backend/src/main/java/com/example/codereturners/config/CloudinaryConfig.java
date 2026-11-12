@@ -1,6 +1,7 @@
 package com.example.codereturners.config;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.cloudinary.Cloudinary;
@@ -16,6 +17,7 @@ public class CloudinaryConfig {
 	@Value("${cloudinary.api-secret}")
 	private String apiSecret;
 
+	@Bean
 	public Cloudinary cloudinary() {
 		
 		return new Cloudinary(
