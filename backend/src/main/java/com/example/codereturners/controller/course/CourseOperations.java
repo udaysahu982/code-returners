@@ -48,11 +48,10 @@ public class CourseOperations {
         this.cloudinary = cloudinary;
     }
 	
-//	@PostMapping(
-//			value = "/createcourse",
-//	        consumes = MediaType.MULTIPART_FORM_DATA_VALUE
-//	        )
-    @PostMapping("/createcourse")
+	@PostMapping(
+			value = "/createcourse",
+	        consumes = MediaType.MULTIPART_FORM_DATA_VALUE
+	        )
 	public ResponseEntity<String> createCourse(@ModelAttribute CourseForm courseForm) throws IOException {
 		
 		System.out.println("Create course is called");

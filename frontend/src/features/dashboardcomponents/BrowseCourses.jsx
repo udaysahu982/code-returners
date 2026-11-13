@@ -67,17 +67,27 @@ const BrowseCourses = () => {
             >
 
               {/* Course Thumbnail */}
-              <div className="relative flex h-44 items-center justify-center bg-gradient-to-br from-indigo-600 via-blue-600 to-cyan-500">
+              <div className="relative flex h-44 items-center justify-center overflow-hidden rounded-t-xl">
 
-                <div className="text-6xl font-bold text-white/90">
-                  {e.title?.charAt(0).toUpperCase()}
-                </div>
+    {e.imageUrl ? (
+        <img
+            src={e.imageUrl}
+            alt={e.title}
+            className="h-full w-full object-contain"
+        />
+    ) : (
+        <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-indigo-600 via-blue-600 to-cyan-500">
+            <div className="text-6xl font-bold text-white/90">
+                {e.title?.charAt(0).toUpperCase()}
+            </div>
+        </div>
+    )}
 
-                <span className="absolute right-4 top-4 rounded-full bg-white/95 px-3 py-1 text-xs font-semibold text-indigo-700">
-                  {e.level}
-                </span>
+    <span className="absolute right-4 top-4 rounded-full bg-white/95 px-3 py-1 text-xs font-semibold text-indigo-700">
+        {e.level}
+    </span>
 
-              </div>
+</div>
 
               {/* Course Information */}
               <div className="p-5">
