@@ -44,6 +44,10 @@ public class CourseService {
 		return repo.save(course);
 	}
 	
+	public List<Course> findByFacultyId(int facultyId) {
+		return repo.findByFacultyId(facultyId);
+	}
+	
 
 
 }

@@ -14,6 +14,7 @@ import { NavLink } from 'react-router-dom';
 
 const menuItems = [
     { name: "Overview", path: "/instructor/overview", icon: LayoutDashboard },
+    { name: "CreatedCourses", path: "/instructor/createdCourses", icon: LayoutDashboard },
     { name: "CreateCourse", path: "/instructor/createCourse", icon: LayoutDashboard },
     { name: "Progress", path: "/instructor/progress", icon: TrendingUp },
     { name: "Browse Course", path: "/instructor/browsecourses", icon: BookOpen },

@@ -11,7 +11,7 @@ import Instructorsignup from '../features/Auth/signup/Instructorsignup';
 import Studentdashboard from '../features/student/Studentdashboard';
 import Instructordashboard from '../features/instructor/Instructordashboard';
 import Overview from '../features/dashboardcomponents/Overview';
-import BrowseCourses from '../features/dashboardcomponents/BrowseCourses';
+import BrowseCourses from '../features/courses/BrowseCourses';
 import Progress from '../features/dashboardcomponents/Progress';
 import Certificates from '../features/dashboardcomponents/Certificates';
 import Mycourses from '../features/dashboardcomponents/Mycourses';
@@ -19,6 +19,7 @@ import Assignments from '../features/dashboardcomponents/Assignments';
 import Profile from '../features/dashboardcomponents/Profile';
 import TestFunctionality from '../Test/TestFunctionality';
 import CreateCourse from '../features/instructor/functionalities/CreateCourse';
+import CreatedCourses from '../features/instructor/functionalities/CreatedCourses';
 
 const ProjectRoutes = () => {
   return (
@@ -54,6 +55,7 @@ const ProjectRoutes = () => {
 
                 <Route path="overview" element={<Overview />} />
                 <Route path="createCourse" element={<CreateCourse />} />
+                <Route path="createdCourses" element={<CreatedCourses/>}/>
                 <Route path="progress" element={<Progress />} />
                 <Route path="browsecourses" element={<BrowseCourses />} />
                 <Route path="mycourses" element={<Mycourses />} />
