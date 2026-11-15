@@ -54,7 +54,7 @@ const ProjectRoutes = () => {
                 <Route index element={<Navigate to="overview" replace />} />
 
                 <Route path="overview" element={<Overview />} />
-                <Route path="createCourse" element={<CreateCourse />} />
+                <Route path="createCourse" element={<CreateCourse/>} />
                 <Route path="createdCourses" element={<CreatedCourses/>}/>
                 <Route path="progress" element={<Progress />} />
                 <Route path="browsecourses" element={<BrowseCourses />} />
