@@ -1,10 +1,13 @@
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const API = "http://localhost:8080/api/course/createcourse";
 
 const CreateCourse = () => {
+    const navigate = useNavigate();
+
     const [course, setCourse] = useState({
         facultyId: 1,
         category_id: "",
@@ -166,6 +169,8 @@ const CreateCourse = () => {
 
         } finally {
             setLoading(false);
+            navigate("/createdCourses")
+
         }
     };
 
