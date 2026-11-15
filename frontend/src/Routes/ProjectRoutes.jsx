@@ -20,6 +20,7 @@ import Profile from '../features/dashboardcomponents/Profile';
 import TestFunctionality from '../Test/TestFunctionality';
 import CreateCourse from '../features/instructor/functionalities/CreateCourse';
 import CreatedCourses from '../features/instructor/functionalities/CreatedCourses';
+import ViewCourse from '../features/courses/ViewCourse';
 
 const ProjectRoutes = () => {
   return (
@@ -45,6 +46,7 @@ const ProjectRoutes = () => {
                 <Route path="assignments" element={<Assignments />} />
                 <Route path="certificates" element={<Certificates />} />
                 <Route path="profile" element={<Profile />} />
+                <Route path='viewCourse' element={<ViewCourse/>}/>
 
           </Route>
 
