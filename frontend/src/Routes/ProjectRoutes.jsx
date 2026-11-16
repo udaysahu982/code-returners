@@ -22,6 +22,22 @@ import CreateCourse from '../features/instructor/functionalities/CreateCourse';
 import CreatedCourses from '../features/instructor/functionalities/CreatedCourses';
 import ViewCourse from '../features/courses/ViewCourse';
 
+
+const SharedRoutes =  (
+    <>
+                <Route index element={<Navigate to="overview" replace />} />
+                <Route path="overview" element={<Overview />} />
+                <Route path="progress" element={<Progress />} />
+                <Route path="browsecourses" element={<BrowseCourses />} />
+                <Route path="mycourses" element={<Mycourses />} />
+                <Route path="assignments" element={<Assignments />} />
+                <Route path="certificates" element={<Certificates />} />
+                <Route path="profile" element={<Profile />} />
+                <Route path='viewCourse/:id' element={<ViewCourse/>}/>
+    </>
+  )
+
+
 const ProjectRoutes = () => {
   return (
    <BrowserRouter>
@@ -37,33 +53,16 @@ const ProjectRoutes = () => {
          {/* Student Dashboard Layout */}
          <Route path="/student" element={<Studentdashboard/>}>
 
-                <Route index element={<Navigate to="overview" replace />} />
-
-                <Route path="overview" element={<Overview />} />
-                <Route path="progress" element={<Progress />} />
-                <Route path="browsecourses" element={<BrowseCourses />} />
-                <Route path="mycourses" element={<Mycourses />} />
-                <Route path="assignments" element={<Assignments />} />
-                <Route path="certificates" element={<Certificates />} />
-                <Route path="profile" element={<Profile />} />
-                <Route path='viewCourse' element={<ViewCourse/>}/>
-
+               {SharedRoutes}
+               
           </Route>
 
           {/* Instructor Dashboard Layout */}
           <Route path="/instructor" element={<Instructordashboard/>}>
-
-                <Route index element={<Navigate to="overview" replace />} />
-
-                <Route path="overview" element={<Overview />} />
+              
+               {SharedRoutes}
                 <Route path="createCourse" element={<CreateCourse/>} />
                 <Route path="createdCourses" element={<CreatedCourses/>}/>
-                <Route path="progress" element={<Progress />} />
-                <Route path="browsecourses" element={<BrowseCourses />} />
-                <Route path="mycourses" element={<Mycourses />} />
-                <Route path="assignments" element={<Assignments />} />
-                <Route path="certificates" element={<Certificates />} />
-                <Route path="profile" element={<Profile />} />
 
           </Route>
 

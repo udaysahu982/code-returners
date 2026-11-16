@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CourseCard = (e) => {
+const CourseCard = ({e}) => {
   return (
    <div
               key={e.id}
