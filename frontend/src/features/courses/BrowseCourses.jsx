@@ -3,6 +3,8 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import ViewCourse from './ViewCourse';
 import CourseCard from './CourseCard';
+import { useNavigate } from 'react-router-dom';
+import useBasePath from '../../hooks/useBasePath';
 
 const API = "http://localhost:8080/api/courses/viewAllCourses";
 
@@ -11,8 +13,12 @@ const BrowseCourses = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState();
-  const viewCourse = () => {
-    <ViewCourse />
+
+  const base = useBasePath();
+  const navigate = useNavigate();
+
+  const viewCourse = (course) => {
+    navigate(base+"/viewCourse/"+course.id)
   }
 
   useEffect(() => {
@@ -66,7 +72,8 @@ const BrowseCourses = () => {
 
           {data.map((e) => (
 
-            <CourseCard key={e.id} e={e}/>
+            <CourseCard  key={e.id} e={e}   />
+            
 
           ))}
 
