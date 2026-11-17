@@ -17,8 +17,8 @@ const BrowseCourses = () => {
   const base = useBasePath();
   const navigate = useNavigate();
 
-  const viewCourse = (course) => {
-    navigate(base+"/viewCourse/"+course.id)
+  const viewCourse = (courseId) => {
+    navigate(`${base}/viewCourse/${courseId}`)
   }
 
   useEffect(() => {
@@ -72,7 +72,7 @@ const BrowseCourses = () => {
 
           {data.map((e) => (
 
-            <CourseCard  key={e.id} e={e}   />
+            <CourseCard  key={e.id} e={e} onClick={ () => viewCourse(e.id)}  />
             
 
           ))}
