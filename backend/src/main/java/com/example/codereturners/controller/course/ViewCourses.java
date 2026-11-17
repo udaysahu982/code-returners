@@ -37,6 +37,13 @@ public class ViewCourses {
 		return ResponseEntity.ok(courses);	
 		}
 	
+	@GetMapping("/viewCourse")
+	public ResponseEntity<?> viewCourse(@RequestBody int courseId) {
+		
+		Course course = courseService.findCourseById(courseId);
+		return ResponseEntity.ok(course);
+	}
+	
 	@PostMapping("/createdCourses")
 	public ResponseEntity<?> viewCreatedCourse(@RequestBody Map<String, Integer> req){
 		
