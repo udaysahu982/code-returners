@@ -37,12 +37,16 @@ public class ViewCourses {
 		return ResponseEntity.ok(courses);	
 		}
 	
+	
 	@GetMapping("/viewCourse")
 	public ResponseEntity<?> viewCourse(@RequestBody int courseId) {
 		
+		System.out.println("The view course is called with id is " + courseId);
 		Course course = courseService.findCourseById(courseId);
+		System.out.println("course service is called " + courseId + "with this id");
 		return ResponseEntity.ok(course);
 	}
+	
 	
 	@PostMapping("/createdCourses")
 	public ResponseEntity<?> viewCreatedCourse(@RequestBody Map<String, Integer> req){
