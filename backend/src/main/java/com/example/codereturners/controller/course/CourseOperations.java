@@ -77,7 +77,7 @@ public class CourseOperations {
 	
 	
 	@GetMapping("/openEditCourse")
-	public String openEditCourse(@RequestParam("id") int id, Model model) {
+	public String openEditCourse(@RequestParam("id") Long id, Model model) {
 		
 		System.out.println("Edit course is been called and data is ");
 		
@@ -90,7 +90,7 @@ public class CourseOperations {
 	}
 	
 	@PostMapping("/editCourse/{id}")
-	public String editCourse(@ModelAttribute Course course, @PathVariable int id) {
+	public String editCourse(@ModelAttribute Course course, @PathVariable Long id) {
 		
 		System.out.println("the new data is before update " + course.toString());
 		
@@ -100,7 +100,7 @@ public class CourseOperations {
 	}
 	
 	@RequestMapping("/deleteCourse")
-	public String deleteCourse(int id) {
+	public String deleteCourse(Long id) {
 		
 		serv.deleteCourse(id);
 		csServ.deleteAllSectionByCourseId(id);

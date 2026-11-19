@@ -25,7 +25,7 @@ public class CourseService {
 		return repo.findAll();
 	}
 	
-	public Course findCourseById(int id) {
+	public Course findCourseById(Long id) {
 		
 		Course course =repo.findById(id)
 				.orElseThrow(() -> new RuntimeException("Course not found"));
@@ -33,18 +33,18 @@ public class CourseService {
 		return course;
 	}
 	
-	public void deleteCourse(int id) {
+	public void deleteCourse(Long id) {
 		repo.deleteById(id);
 	}
 	
-	public Course updateCourse(Course course, int id) {
+	public Course updateCourse(Course course, Long id) {
 		
 		course.setCreationDate(LocalDateTime.now());
 		course.setId(id);
 		return repo.save(course);
 	}
 	
-	public List<Course> findByFacultyId(int facultyId) {
+	public List<Course> findByFacultyId(Long facultyId) {
 		return repo.findByFacultyId(facultyId);
 	}
 	

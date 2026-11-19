@@ -12,8 +12,8 @@ public class CourseSection {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
-	private int courseId;
+	private Long id;
+	private Long courseId;
 	private String title;
 
 	
@@ -23,23 +23,23 @@ public class CourseSection {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public CourseSection(int id, int courseId, String title) {
+	public CourseSection(Long id, Long courseId, String title) {
 		super();
 		this.id = id;
 		this.courseId = courseId;
 		this.title = title;
 	
 	}
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
-	public int getCourseId() {
+	public Long getCourseId() {
 		return courseId;
 	}
-	public void setCourseId(int courseId) {
+	public void setCourseId(Long courseId) {
 		this.courseId = courseId;
 	}
 	public String getTitle() {

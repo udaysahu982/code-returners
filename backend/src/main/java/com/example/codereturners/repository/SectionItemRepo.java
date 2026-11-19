@@ -8,12 +8,12 @@ import org.springframework.stereotype.Repository;
 import com.example.codereturners.bean.SectionItem;
 
 @Repository
-public interface SectionItemRepo extends JpaRepository<SectionItem, Integer> {
+public interface SectionItemRepo extends JpaRepository<SectionItem, Long> {
 	
-	public List<SectionItem> findAllByCourseIdAndSectionId(int courseId, int sectionId);
+	public List<SectionItem> findAllByCourseIdAndSectionId(Long courseId, Long sectionId);
 	
-	public void deleteAllBySectionId(int sectionId);
+	public void deleteAllBySectionId(Long sectionId);
 	
-	public void deleteAllByCourseId(int courseId);
+	public void deleteAllByCourseId(Long courseId);
 
 }

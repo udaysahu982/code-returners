@@ -12,9 +12,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.codereturners.bean.Course;
@@ -38,8 +40,8 @@ public class ViewCourses {
 		}
 	
 	
-	@GetMapping("/viewCourse")
-	public ResponseEntity<?> viewCourse(@RequestBody int courseId) {
+	@GetMapping("/viewCourse/{courseId}")
+	public ResponseEntity<?> viewCourse(@PathVariable Long courseId) {
 		
 		System.out.println("The view course is called with id is " + courseId);
 		Course course = courseService.findCourseById(courseId);
@@ -49,9 +51,9 @@ public class ViewCourses {
 	
 	
 	@PostMapping("/createdCourses")
-	public ResponseEntity<?> viewCreatedCourse(@RequestBody Map<String, Integer> req){
+	public ResponseEntity<?> viewCreatedCourse(@RequestBody Map<String, Long> req){
 		
-		Integer facultyId = req.get("facultyId");
+		Long facultyId = req.get("facultyId");
 		
 		if(facultyId == null || facultyId == 0) {
 			return ResponseEntity.badRequest().body("Invalid faculty id");	
