@@ -8,8 +8,8 @@ import org.springframework.stereotype.Repository;
 import com.example.codereturners.bean.Course;
 
 @Repository
-public interface CourseRepo extends JpaRepository<Course, Integer>  {
+public interface CourseRepo extends JpaRepository<Course, Long>  {
 	
-	List<Course> findByFacultyId(int facultyId);
+	List<Course> findByFacultyId(Long facultyId);
 
 }

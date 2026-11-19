@@ -26,7 +26,7 @@ public class CourseSectionItemController {
 	SectionItemService serv;
 
 	@GetMapping("/openViewSectionItems")
-	public String openViewSectionItem(@RequestParam("courseId") int courseId, @RequestParam("sectionId") int sectionId, Model model) {
+	public String openViewSectionItem(@RequestParam("courseId") Long courseId, @RequestParam("sectionId") Long sectionId, Model model) {
 		
 		System.out.println("section item controller is working ....");
 		model.addAttribute("items", serv.findItemsByCourseAndSectionId(courseId, sectionId));
@@ -38,7 +38,7 @@ public class CourseSectionItemController {
 	}
 	
 	@RequestMapping("/openAddSectionItem")
-	public String openAddSectionItem(@RequestParam("courseId") int courseId, @RequestParam("sectionId") int sectionId, Model model) {
+	public String openAddSectionItem(@RequestParam("courseId") Long courseId, @RequestParam("sectionId") Long sectionId, Model model) {
 		
 		model.addAttribute("courseId", courseId);
 		model.addAttribute("sectionId", sectionId);
@@ -61,7 +61,7 @@ public class CourseSectionItemController {
 	}
 	
 	@GetMapping("/openEditSectionItem")
-	public String openEditSectionItem(@RequestParam int id, Model model) {
+	public String openEditSectionItem(@RequestParam Long id, Model model) {
 		
 		System.out.println("Edit Section item opened");
 		
@@ -71,7 +71,7 @@ public class CourseSectionItemController {
 	}
 	
 	@PostMapping("/editSectionItem")
-	public String editSectionItem(@ModelAttribute SectionItem item, @RequestParam("id") int id, @RequestParam(value = "uploadedFile", required = false)
+	public String editSectionItem(@ModelAttribute SectionItem item, @RequestParam("id") Long id, @RequestParam(value = "uploadedFile", required = false)
     MultipartFile uploadedFile) throws IOException {
 		
 		System.out.println("the item is now updating ");
@@ -88,7 +88,7 @@ public class CourseSectionItemController {
 	
 	
 	@GetMapping("/viewSectionItemFile")
-	public ResponseEntity<byte[]> viewSectionItemFile(@RequestParam int id) {
+	public ResponseEntity<byte[]> viewSectionItemFile(@RequestParam Long id) {
 
 		System.out.println("file view is opened");
 		
@@ -107,7 +107,7 @@ public class CourseSectionItemController {
 	}
 	
 	@GetMapping("/deleteSectionItem")
-	public String deleteSectionItem(@RequestParam("id") int id) {
+	public String deleteSectionItem(@RequestParam("id") Long id) {
 		
 		SectionItem item=serv.findById(id);
 		serv.deleteSectionItem(id);

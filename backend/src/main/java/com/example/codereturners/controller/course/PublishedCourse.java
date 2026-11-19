@@ -27,7 +27,7 @@ public class PublishedCourse {
 	}
 	
 	@GetMapping("/openViewCourseI")
-	public String viewCourse(@RequestParam("id") int id, Model model) {
+	public String viewCourse(@RequestParam("id") Long id, Model model) {
 		
 		System.out.println("inside viewCourseI");
 		model.addAttribute("courseSections", serv.findByCourseId(id));

@@ -3,6 +3,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import useBasePath from '../../hooks/useBasePath';
+import CoursePaymentPopup from './CoursePaymentPopup';
 
 const COURSEAPI = "http://localhost:8080/api/courses/viewCourse";
 
@@ -15,9 +16,11 @@ const ViewCourse = () => {
   const [course, setCourse] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const [showPaymentPopup, setShowPaymentPopup] = useState(false);
 
   useEffect(() => {
 
+    console.log("param is " + courseId)
     const fetchData = async () => {
       try {
         setLoading(true);
@@ -72,7 +75,7 @@ const ViewCourse = () => {
 
   return (
 
-    <div className="min-h-screen bg-slate-50 px-4 py-8 md:px-10">
+    <div className="h-screen overflow-y-auto bg-slate-50 px-4 py-8 md:px-10">
 
       <div className="mx-auto max-w-7xl">
 
@@ -201,11 +204,19 @@ const ViewCourse = () => {
                 </p>
 
                 <button
-                  onClick={handleBuyNow}
+                  onClick={() => setShowPaymentPopup(true)}
                   className="mt-7 w-full rounded-xl bg-blue-600 px-5 py-3.5 font-semibold text-white transition hover:bg-blue-700"
                 >
                   Buy Now
                 </button>
+
+                {showPaymentPopup && (
+                    <CoursePaymentPopup
+                      course={course}
+                      onClose={() => setShowPaymentPopup(false)}
+                      onConfirm={handleBuyNow}
+                      />
+                  )}
 
                 <p className="mt-4 text-center text-xs text-slate-500">
                   Start your learning journey today.

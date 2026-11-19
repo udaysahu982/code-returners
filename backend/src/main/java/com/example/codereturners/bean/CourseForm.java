@@ -4,8 +4,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 public class CourseForm {
 
-	private int facultyId;
-	private int category_id;
+	private Long facultyId;
+	private Long category_id;
 	private String title;
 	private String description;
 	private String level;
@@ -18,7 +18,7 @@ public class CourseForm {
 		// TODO Auto-generated constructor stub
 	}
 
-	public CourseForm(int facultyId, int category_id, String title, String description, String level, double price,
+	public CourseForm(Long facultyId, Long category_id, String title, String description, String level, double price,
 			MultipartFile image) {
 		super();
 		this.facultyId = facultyId;
@@ -30,19 +30,19 @@ public class CourseForm {
 		this.image = image;
 	}
 
-	public int getFacultyId() {
+	public Long getFacultyId() {
 		return facultyId;
 	}
 
-	public void setFacultyId(int facultyId) {
+	public void setFacultyId(Long facultyId) {
 		this.facultyId = facultyId;
 	}
 
-	public int getCategory_id() {
+	public Long getCategory_id() {
 		return category_id;
 	}
 
-	public void setCategory_id(int category_id) {
+	public void setCategory_id(Long category_id) {
 		this.category_id = category_id;
 	}
 

@@ -23,7 +23,7 @@ public class CourseSectionController {
 	SectionItemService siService;
 	
 	@GetMapping("/openAddSection")
-	public String openAddCourseSection(@RequestParam("id") int id, Model model) {
+	public String openAddCourseSection(@RequestParam("id") Long id, Model model) {
 		System.out.println("Add Section is opened" + id);
 		model.addAttribute("id",id);
 		return "addSection";
@@ -40,7 +40,7 @@ public class CourseSectionController {
 	}
 	
 	@GetMapping("/openEditSection")
-	public String openEditCourse(@RequestParam("id") int id, Model model) {
+	public String openEditCourse(@RequestParam("id") Long id, Model model) {
 		
 		model.addAttribute("section", serv.findById(id));
 		System.out.println("open edit course controller");
@@ -50,7 +50,7 @@ public class CourseSectionController {
 	@PostMapping("/editSection")
 	public String editSection( @ModelAttribute CourseSection section) {
 		
-		int id =section.getId();
+		Long id =section.getId();
 
 		System.out.println("the section is now updated-1....");
 		
@@ -61,7 +61,7 @@ public class CourseSectionController {
 	}
 	
 	@GetMapping("/deleteSection")
-	public String deleteSection(@RequestParam("id") int id) {
+	public String deleteSection(@RequestParam("id") Long id) {
 		
 		CourseSection section = serv.findById(id);
 		

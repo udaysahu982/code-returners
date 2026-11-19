@@ -7,10 +7,10 @@ import com.example.codereturners.bean.CourseSection;
 import java.util.List;
 
 @Repository
-public interface CourseSectionRepo extends JpaRepository<CourseSection, Integer> {
+public interface CourseSectionRepo extends JpaRepository<CourseSection, Long> {
 	
-	public  List<CourseSection> findByCourseId(int courseId);
+	public  List<CourseSection> findByCourseId(Long courseId);
 	
-	public void deleteAllByCourseId(int courseId);
+	public void deleteAllByCourseId(Long courseId);
 
 }

@@ -33,7 +33,7 @@ const SharedRoutes =  (
                 <Route path="assignments" element={<Assignments />} />
                 <Route path="certificates" element={<Certificates />} />
                 <Route path="profile" element={<Profile />} />
-                <Route path='viewCourse/:id' element={<ViewCourse/>}/>
+                <Route path='viewCourse/:courseId' element={<ViewCourse/>}/>
     </>
   )
 

@@ -40,7 +40,7 @@ public class CategoryController {
 	
 	  // Open edit page
     @GetMapping("/openEditCategory")
-    public String openEditCategory(@RequestParam int id, Model model) {
+    public String openEditCategory(@RequestParam Long id, Model model) {
 
         model.addAttribute("category", serv.getCategoryById(id));
         return "editCategory";
@@ -56,7 +56,7 @@ public class CategoryController {
 
     // Delete category
     @GetMapping("/deleteCategory")
-    public String deleteCategory(@RequestParam int id) {
+    public String deleteCategory(@RequestParam Long id) {
         serv.deleteCategory(id);
         return "redirect:/viewAllCategory";
     }

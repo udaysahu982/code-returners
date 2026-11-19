@@ -13,10 +13,10 @@ public class Course {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Long id;
 	
-	private int facultyId;
-	private int category_id;
+	private Long facultyId;
+	private Long category_id;
 	private String title;
 	private String description;
 	private String level;
@@ -31,7 +31,7 @@ public class Course {
 	}
 
 
-	public Course(int id, int facultyId, int category_id, String title, String description, String level, double price,
+	public Course(Long id, Long facultyId, Long category_id, String title, String description, String level, double price,
 			LocalDateTime creationDate, String imageUrl) {
 		super();
 		this.id = id;
@@ -46,32 +46,32 @@ public class Course {
 	}
 
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
 
-	public int getFacultyId() {
+	public Long getFacultyId() {
 		return facultyId;
 	}
 
 
-	public void setFacultyId(int facultyId) {
+	public void setFacultyId(Long facultyId) {
 		this.facultyId = facultyId;
 	}
 
 
-	public int getCategory_id() {
+	public Long getCategory_id() {
 		return category_id;
 	}
 
 
-	public void setCategory_id(int category_id) {
+	public void setCategory_id(Long category_id) {
 		this.category_id = category_id;
 	}
 

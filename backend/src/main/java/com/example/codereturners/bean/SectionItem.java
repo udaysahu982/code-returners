@@ -14,13 +14,13 @@ public class SectionItem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @Column( nullable = false)
-    private int courseId;
+    private Long courseId;
 
     @Column( nullable = false)
-    private int sectionId;
+    private Long sectionId;
 
     @Column(name = "title", nullable = false, length = 200)
     private String title;
@@ -41,7 +41,7 @@ public class SectionItem {
     }
 
     // Parameterized constructor
-    public SectionItem(int courseId, int sectionId,
+    public SectionItem(Long courseId, Long sectionId,
                        String title, byte[] file,
                        String vidLink, String description) {
         this.courseId = courseId;
@@ -53,27 +53,27 @@ public class SectionItem {
     }
 
     // Getters and Setters
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public int getCourseId() {
+    public Long getCourseId() {
         return courseId;
     }
 
-    public void setCourseId(int courseId) {
+    public void setCourseId(Long courseId) {
         this.courseId = courseId;
     }
 
-    public int getSectionId() {
+    public Long getSectionId() {
         return sectionId;
     }
 
-    public void setSectionId(int sectionId) {
+    public void setSectionId(Long sectionId) {
         this.sectionId = sectionId;
     }
 

@@ -17,12 +17,12 @@ public class CourseSectionService {
 	@Autowired
 	CourseSectionRepo repo;
 	
-	public CourseSection findById(int id) {
+	public CourseSection findById(Long id) {
 		return repo.findById(id)
 				.orElseThrow(()-> new RuntimeException("Section not found"));
 	}
 	
-	public List<CourseSection> findByCourseId(int id) {
+	public List<CourseSection> findByCourseId(Long id) {
 		
 		return repo.findByCourseId(id);
 	}
@@ -31,16 +31,16 @@ public class CourseSectionService {
 		return repo.save(section);
 	}
 	
-	public CourseSection updateSection(CourseSection section, int id) {
+	public CourseSection updateSection(CourseSection section, Long id) {
 		section.setId(id);
 		return repo.save(section);
 	}
 	
-	public void deleteSection(int id) {
+	public void deleteSection(Long id) {
 		repo.deleteById(id);
 	}
 	
-	public void deleteAllSectionByCourseId(int courseId) {
+	public void deleteAllSectionByCourseId(Long courseId) {
 		repo.deleteAllByCourseId(courseId);
 	}
 }

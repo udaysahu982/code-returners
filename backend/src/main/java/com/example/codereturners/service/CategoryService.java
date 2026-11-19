@@ -25,7 +25,7 @@ public class CategoryService {
     }
     
     // Get category by ID
-    public Category getCategoryById(int id) {
+    public Category getCategoryById(Long id) {
         return repo.findById(id)
                 .orElseThrow(() -> new RuntimeException("Category not found with ID: " + id));
     }
@@ -39,7 +39,7 @@ public class CategoryService {
     }
 
     // Delete category
-    public void deleteCategory(int id) {
+    public void deleteCategory(Long id) {
         if (!repo.existsById(id)) {
             throw new RuntimeException(
                     "Category not found with ID: " + id);
