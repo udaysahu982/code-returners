@@ -45,6 +45,7 @@ const ViewCourse = () => {
   }, [courseId]);
 
   const handleBuyNow = () => {
+    setShowPaymentPopup(false);
     navigate(`${base}/checkout/${courseId}`);
   };
 
@@ -202,6 +203,8 @@ const ViewCourse = () => {
                 <p className="mt-2 text-sm text-slate-500">
                   One-time course purchase
                 </p>
+
+                {/* popup button for buying   */}
 
                 <button
                   onClick={() => setShowPaymentPopup(true)}

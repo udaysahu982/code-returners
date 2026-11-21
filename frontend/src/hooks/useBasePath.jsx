@@ -3,10 +3,11 @@ import { useLocation } from 'react-router-dom'
 
 const useBasePath = () => {
 
-    const {pathname} = useLocation();
+    const location = useLocation();
   
-    if(pathname.startsWith("/instructor")) return "/instructor";
-    return "student";
+    if(location.pathname.startsWith("/instructor")) return "/instructor";
+
+    if(location.pathname.startsWith("/student")) return "/student";
 }
 
 export default useBasePath
