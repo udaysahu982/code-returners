@@ -26,11 +26,10 @@ public class PaymentController {
     @PostMapping("/create-order")
     public ResponseEntity<?> createOrder(
             @RequestBody CreateOrderRequest request) {
+    	System.out.println("The payment controller is called");
 
         try {
-            JSONObject order = paymentService.createOrder(
-                    request.getCourseId()
-            );
+            JSONObject order = paymentService.createOrder(request.getCourseId());
 
             return ResponseEntity.ok(order.toMap());
 
