@@ -23,7 +23,7 @@ public class PaymentController {
         this.paymentService = paymentService;
     }
 
-    @PostMapping("/create-order")
+    @PostMapping("/createorder")
     public ResponseEntity<?> createOrder(
             @RequestBody CreateOrderRequest request) {
     	System.out.println("The payment controller is called");
