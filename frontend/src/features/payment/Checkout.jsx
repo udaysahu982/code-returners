@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import useBasePath from '../../hooks/useBasePath';
 
 const API = 'http://localhost:8080/api/payment';
+const COURSEAPI='http://localhost:8080/api/courses/viewCourse'
 
 const Checkout = () => {
 
@@ -19,6 +20,30 @@ const Checkout = () => {
     const [error, setError] = useState('');
     const [paymentSuccess, setPaymentSuccess] = useState(false);
 
+    const [course, setCourse] = useState(null);
+    
+
+    useEffect(()=>{
+         setLoading(true);
+         setError('');
+
+        const fetchData = async() => {
+            try{
+                const response = axios.get(`${COURSEAPI}/${courseId}`)
+            setCourse(response.data);
+
+     } catch (err) {
+        setError(
+          err.response?.data?.message || 'Unable to load course details.'
+        );
+      } finally {
+        setLoading(false);
+      }
+
+        }
+
+    },[])
+
     const handlePayment = async () => {
 
         try {
@@ -27,7 +52,7 @@ const Checkout = () => {
 
             // 1. Ask backend to create a Razorpay order
             const orderResponse = await axios.post(
-                `${API}/create-order`,
+                `${API}/createorder`,
                 {
                     courseId: Number(courseId)
                 }
@@ -144,12 +169,12 @@ const Checkout = () => {
 
                 <div className="mt-6 rounded-xl bg-slate-50 p-4">
                     <p className="text-sm text-slate-500">
-                        Course ID: {courseId}
+                        Course Name: {course.title}
                     </p>
 
                     <p className="mt-2 text-lg font-bold text-slate-800">
                         Amount shown: ₹
-                        {Number(totalAmount || 0).toFixed(2)}
+                        {course.price}
                     </p>
                 </div>
 
