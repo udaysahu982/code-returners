@@ -42,4 +42,15 @@ public class PaymentController {
                     .body(e.getMessage());
         }
     }
+    
+    
+    @GetMapping("/summary/{courseId}")
+    public ResponseEntity<?> getSummary(@PathVariable Long courseId) {
+        try {
+            return ResponseEntity.ok(paymentService.getPriceSummary(courseId));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+    
 }
