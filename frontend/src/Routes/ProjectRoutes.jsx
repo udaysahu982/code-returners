@@ -21,7 +21,7 @@ import TestFunctionality from '../Test/TestFunctionality';
 import CreateCourse from '../features/instructor/functionalities/CreateCourse';
 import CreatedCourses from '../features/instructor/functionalities/CreatedCourses';
 import ViewCourse from '../features/courses/ViewCourse';
-import Checkout from '../features/payment/Checkout';
+import CourseSummary from '../features/payment/CourseSummary';
 
 
 const SharedRoutes =  (
@@ -35,7 +35,7 @@ const SharedRoutes =  (
                 <Route path="certificates" element={<Certificates />} />
                 <Route path="profile" element={<Profile />} />
                 <Route path='viewCourse/:courseId' element={<ViewCourse/>}/>
-                <Route path='checkout/:courseId' element={<Checkout/>}/>
+                <Route path='checkout/:courseId' element={<CourseSummary/>}/>
     </>
   )
 
