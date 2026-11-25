@@ -66,6 +66,7 @@ public class PaymentService {
         response.put("currency", "INR");
         response.put("key", keyId);
         response.put("courseTitle", course.getTitle());
+        System.out.println("the order is created");
 
         return response;
     }

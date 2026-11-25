@@ -38,8 +38,9 @@ public class PaymentController {
             return ResponseEntity.ok(order.toMap());
 
         } catch (Exception e) {
+        	  e.printStackTrace();
             return ResponseEntity.badRequest()
-                    .body(e.getMessage());
+                    .body(e.getClass().getSimpleName() + ": " + e.getMessage());
         }
     }
     
