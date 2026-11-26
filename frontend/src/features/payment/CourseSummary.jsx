@@ -73,7 +73,7 @@ const CourseSummary = () => {
     }
 
     if (paymentSuccess) {
-        return <PaymentSuccess onContinue={() => navigate(`${base}/my-courses`)} />;
+        return <PaymentSuccess onContinue={() => navigate(`${base}/mycourses`)} />;
     }
 
     // ---------- Main page ----------
