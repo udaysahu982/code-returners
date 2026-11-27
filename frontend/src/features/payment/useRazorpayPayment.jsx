@@ -1,14 +1,9 @@
 import { useState } from 'react';
 import axios from 'axios';
+import getErrorMessage from '../../errorAlert/getErrorMessage';
 
 const PAYMENT_API = 'http://localhost:8080/api/payment';
 
-// Backend can send a plain string or { message }, so handle both
-export const getErrorMessage = (err, fallback) => {
-    const data = err.response?.data;
-    if (typeof data === 'string' && data) return data;
-    return data?.message || err.message || fallback;
-};
 
 /**
  * Handles the whole payment flow:

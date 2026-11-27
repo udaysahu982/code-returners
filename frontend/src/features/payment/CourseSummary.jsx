@@ -4,7 +4,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 import useBasePath from '../../hooks/useBasePath';
 import PriceBreakdown, { formatINR } from './PriceBrekdown';
 import PaymentSuccess from './PaymentSuccess';
-import useRazorpayPayment, { getErrorMessage } from './useRazorpayPayment';
+import useRazorpayPayment from './useRazorpayPayment';
+import getErrorMessage from '../../errorAlert/getErrorMessage';
 
 const COURSE_API = 'http://localhost:8080/api/courses/viewCourse';
 const PAYMENT_API = 'http://localhost:8080/api/payment';
